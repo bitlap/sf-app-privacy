@@ -14,7 +14,7 @@
       "id": "account",
       "title": "2. Accounts and authentication",
       "paragraphs": [
-        "Phone registration or login sends your country code, phone number and entered password to our service to create an account, authenticate you and maintain a session. Do not reuse passwords from other important services. With Sign in with Apple, we process the identifier, verification credentials and any name you allow Apple to provide. We do not receive your Apple Account password.",
+        "Phone registration or login sends your country code, phone number and entered password to our service to create an account, authenticate you and maintain a session. Changing your login password requires your old and new passwords; the server verifies the old password and stores a salted hash of the new one. The app does not save your entered passwords. Do not reuse passwords from other important services. With Sign in with Apple or Apple account linking, we process the identifier, verification credentials and the email address you authorize Apple to provide and our server verifies, to link your sign-in identity and display it in Account and Security. If you choose Hide My Email, Apple may provide a relay address. We do not use email to automatically merge accounts or display it in public profiles, and we do not receive your Apple Account password.",
         "We process your account ID, chosen nickname, avatar, biography and necessary login, security and permission records. Network services receive information such as IP addresses and request times for operation, abuse prevention and IP-region features where offered. An IP-derived region is not your device’s precise location."
       ]
     },
