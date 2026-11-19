@@ -47,11 +47,11 @@ def render():
     baseline = [(s['id'], len(s['paragraphs'])) for s in policies['zh-CN']['sections']]
     outputs = {}
     for code, policy in policies.items():
-        assert policy['language'] == code and policy['updated'] == '2026-11-15'
+        assert policy['language'] == code and policy['updated'] == '2026-11-19'
         assert [(s['id'], len(s['paragraphs'])) for s in policy['sections']] == baseline
         assert len({s['id'] for s in policy['sections']}) == len(baseline)
         title = '幻兔隐私政策' if code == 'zh-CN' else 'SnapFlow Privacy Policy'
-        date = '更新及生效日期：2026年11月15日' if code == 'zh-CN' else 'Updated and effective: November 15, 2026'
+        date = '更新及生效日期：2026年11月19日' if code == 'zh-CN' else 'Updated and effective: November 19, 2026'
         toc = ''.join(f'<li><a href="#{s["id"]}">{html.escape(s["title"])}</a></li>' for s in policy['sections'])
         sections = ''.join(f'<section aria-labelledby="{s["id"]}"><h2 id="{s["id"]}">{html.escape(s["title"])}</h2>'
                            + ''.join(f'<p>{p}</p>' for p in s['paragraphs']) + '</section>' for s in policy['sections'])
@@ -62,7 +62,7 @@ def render():
     <p>了解幻兔如何处理账号、照片与云端内容、推荐记录、消息及系统通知，以及如何联系我们提出数据请求。</p>
     <p lang="en">Learn how SnapFlow handles accounts, photos and cloud content, recommendations, messages and notifications, and how to contact us about your data.</p>
     <div class="choices"><a href="zh-CN.html" lang="zh-CN">阅读简体中文版 <span>→</span></a><a href="en.html" lang="en">Read in English <span>→</span></a></div>
-    <p class="date">2026年11月15日 · <span lang="en">November 15, 2026</span></p>''', '')
+    <p class="date">2026年11月19日 · <span lang="en">November 19, 2026</span></p>''', '')
     return outputs
 
 
