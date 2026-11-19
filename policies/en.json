@@ -1,6 +1,6 @@
 {
   "language": "en",
-  "updated": "2026-11-15",
+  "updated": "2026-11-19",
   "sections": [
     {
       "id": "scope",
@@ -41,7 +41,7 @@
       "title": "5. Recommendations, usage records and local identifiers",
       "paragraphs": [
         "Recommendation and resume features process browsing, searches, interactions, viewing/listening progress or duration, recommendation requests and negative feedback generated through use of the service. These records support content delivery, duplicate avoidance, progress restoration and troubleshooting and may be associated with your account. Existing history, recommendation-preference and content controls let you manage the relevant records or preferences.",
-        "Optional first-party event analytics in the code is off by default in the currently released build. Before enabling it later, we will explain the scope, such as event times, random installation identifiers, session/page identifiers and feature actions, and obtain authorization where required. The current app contains no third-party advertising or cross-app advertising-tracking SDK, does not read the IDFA for ad tracking and does not sell personal information."
+        "The current production build enables first-party feature analytics, processing event times, a random installation identifier, session/page identifiers, content or card identifiers and feature actions for recommendations, operation and troubleshooting. Weather coordinates, city names and IP addresses are not sent as weather feature event fields. The current app includes no third-party advertising SDK or cross-app advertising tracking SDK, does not read IDFA for advertising tracking and does not sell personal information."
       ]
     },
     {
@@ -54,8 +54,9 @@
     },
     {
       "id": "permissions",
-      "title": "7. Clipboard, connections and external sharing",
+      "title": "7. Permissions, clipboard, connections and external sharing",
       "paragraphs": [
+        "After you grant location access while using the app, weather can obtain a one-time current location as needed and send its coordinates to our weather endpoint. The app does not continuously track location in the background. Platform reverse-geocoding services process coordinates to display a city name. If location is unavailable or permission is denied, weather can fall back to an IP-derived city, or you can search for a city. Denying location does not affect unrelated features. You can revoke permission in system settings.",
         "While recognizing share links in the foreground, or when you actively paste a code, the app may read clipboard text. Only links matching SnapFlow sharing formats or codes you actively submit are used to validate and open content; unmatched clipboard text is not uploaded as a share code. The system may prompt for clipboard access, which you can refuse.",
         "FTP and similar account-connection or upload features process the relevant account, server and connection state to provide that feature. Protect connection credentials assigned to you and do not share them publicly. After you send a file or link through the system share sheet, recipients and selected platforms process copies under their own rules. Their further copying is not fully under our control."
       ]
@@ -65,6 +66,7 @@
       "title": "8. Service providers and disclosure",
       "paragraphs": [
         "We use these services as necessary for the features: Apple for sign-in and APNs; Tencent Cloud object storage and delivery services (COS/CDN/EdgeOne) to store or transmit uploaded media and related resources; and GitHub Pages to host this policy. Providers may receive necessary files, authentication or delivery information, IP addresses and request logs when processing requests.",
+        "Open-Meteo provides forecasts and city search. Our server rounds forecast coordinates to a regional grid of approximately 0.05 degrees before requesting a forecast; manually entered city searches are sent to its geocoding service. We do not send your account ID, phone number or Apple email to the weather provider. Weather coordinates are not written to your profile or feature analytics events. A manually selected city and its coordinates are saved on your device separately by account and environment to restore your selection.",
         "We require providers processing personal information on our behalf to handle necessary data only for the agreed service purposes and provide protection no less than this policy and applicable rules require. Apple, GitHub and other independent services also have their own terms. We do not arbitrarily disclose personal information to unrelated third parties beyond your instructions, requested services, lawful safety handling or legal requirements.",
         "See the <a href=\"https://www.apple.com/legal/privacy/\">Apple Privacy Policy</a>, <a href=\"https://www.tencentcloud.com/document/product/301/17345\">Tencent Cloud Privacy Policy</a> and <a href=\"https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement\">GitHub Privacy Statement</a>. This policy website loads no advertising, analytics scripts or remote fonts and uses no cookies or local storage for language preferences. Its hosting provider may still process access logs."
       ]
